@@ -15,9 +15,9 @@
     opacity: .7;
     transform: scale(0.5);
     transition: all .5s ease-in-out;
-    -moz-border-radius: 4px 4px 4px 4px;
-    -webkit-border-radius: 4px 4px 4px 4px;
-    border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    border-radius: 8px 8px 8px 8px;
     -webkit-box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.75);
