@@ -10,7 +10,7 @@ exports.addOdds = function() {
 };
 
 exports.isPrime = function(value) {
-    const end = Math.ceil(value / 2);
+    const end = Math.floor(Math.sqrt(value));
     for(let i = 2; i <= end; i++) {
         if(value % i === 0) return false;
     }
