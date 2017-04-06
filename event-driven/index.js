@@ -18,7 +18,7 @@ readEmitter.on('success', function(event) {
     console.log('added to cache: ' + event.filePath);
     cache[event.filePath] = event.content;
 });
-function readFile(filePath, callback) {
+function readFileCacheFirst(filePath, callback) {
     filePath = path.resolve(process.cwd(), filePath);
     if (cache[filePath]) {
         console.log('from cached: ' + filePath);
@@ -32,6 +32,6 @@ fs.writeFile('./foo.txt', 'foo');
 fs.readFile('./foo.txt', 'utf8');
 
 setTimeout(function() {
-    readFile('./foo.txt', console.log);
-    readFile('./foo.txt', console.log);
+    readFileCacheFirst('./foo.txt', console.log);
+    readFileCacheFirst('./foo.txt', console.log);
 }, 1000);
