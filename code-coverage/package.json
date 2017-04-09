@@ -4,7 +4,8 @@
   "description": "Code coverage practice",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha test",
+    "coverage": "nyc --reporter=html --reporter=text mocha test/*.js"
   },
   "author": "",
   "license": "ISC",
