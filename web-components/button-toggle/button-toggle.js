@@ -16,11 +16,6 @@
             super();
             let shadowRoot = this.attachShadow({mode: 'open'});
             shadowRoot.innerHTML = template;
-
-            // force redraw
-            this.style.display='none';
-            this.offsetHeight;
-            this.style.display='inline-block';
         }
 
     }
