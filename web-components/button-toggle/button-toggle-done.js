@@ -3,6 +3,9 @@
 
     const template = `
         <style>
+            :host {
+                display: inline-block;
+            }
             :host div {
                 display: inline-block;
                 border-radius: 4px;
@@ -71,11 +74,6 @@
             this.addEventListener('click', function() {
                 if (!this.disabled) this.toggle();
             });
-
-            // force redraw
-            this.style.display='none';
-            this.offsetHeight;
-            this.style.display='inline-block';
         }
 
         toggle() {
