@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>To Do App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Task List</h1>
+
+        <form id="create" @submit.prevent="addTask()">
+            <label for="newTask">New Task Name</label>
+            <input type="text" placeholder="New Task Name" v-model="newTask">
+            <button type="submit">+</button>
+        </form>
+
+        <ul class="tasks">
+            <li v-for="(task, index) in tasks">
+                <input type="checkbox" :id="'task' + index" name="tasks" :value="task.title" v-model="task.checked">
+                <label :for="'task' + index">{{task.title}}</label>
+                <button @click="removeTask(task)">&times;</button>
+            </li>
+        </ul>
+
+        <p class="completed">Completed Tasks: {{completed}} / {{total}}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="js/app-done.js"></script>
+</body>
+</html>
