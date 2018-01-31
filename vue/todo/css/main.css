@@ -57,7 +57,12 @@ button {
     padding: 3px 0;
     margin: 0;
     line-height: 27px;
+    display: flex;
+    align-items: center;
 }
-.tasks button {
-    float: right;
+.tasks input {
+    margin-right: 10px;
+}
+.tasks label {
+    flex: 1;
 }
