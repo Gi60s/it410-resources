@@ -103,7 +103,7 @@
 
         attributeChangedCallback(attrName, oldValue, newValue) {
             console.log('Attribute changed');
-            if (attrName === 'index') this.index = parseInt(newValue);
+            if (attrName === 'index' && oldValue !== newValue) this.index = parseInt(newValue);
         }
 
     }
