@@ -10,23 +10,23 @@
     <div id="app">
         <h1>Task List</h1>
 
-        <!-- use the form to add tasks -->
+        <!-- (5) use the form to add tasks via a vue method -->
         <form id="create">
             <label for="newTask">New Task Name</label>
             <input type="text" placeholder="New Task Name" value="">
             <button type="submit">+</button>
         </form>
 
-        <!-- use a loop to populate tasks -->
+        <!-- (1) use a loop to populate tasks -->
         <ul class="tasks">
             <li>
-                <!-- bind the id to the index, the value to the task title, and the check state -->
+                <!-- (2) bind the id to the index, the value to the task title, and the check state -->
                 <input type="checkbox" id="task1" name="tasks" value="task-1">
 
-                <!-- bind the id to the index and bind the task title -->
+                <!-- (3) bind the id to the index and bind the task title -->
                 <label for="task1">Task #1</label>
 
-                <!-- click the button to delete this task -->
+                <!-- (4) click the button to delete this task via a vue method -->
                 <button>&times;</button>
             </li>
             <li>
@@ -41,7 +41,7 @@
             </li>
         </ul>
 
-        <!-- use computed properties to calculate completed and total -->
+        <!-- (6) use computed properties to calculate completed and total -->
         <p class="completed">Completed Tasks: 0 / 3</p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
