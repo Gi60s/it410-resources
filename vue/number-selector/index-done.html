@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Number Selector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Drop Down</h1>
+
+        <div class="question">
+            <label>Low Value</label>
+            <number-selector :value="low" v-on:value-change="lowChanged"></number-selector>
+        </div>
+
+        <div class="question" :value="10">
+            <label>High Value</label>
+            <number-selector :value="high" v-on:value-change="highChanged"></number-selector>
+        </div>
+
+        <div class="question">
+            <label>Select a Number</label>
+            <number-selector :value="value" :min="low" :max="high" v-on:value-change="valueChanged"></number-selector>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="components/number-selector-done.js"></script>
+    <script src="js/app-done.js"></script>
+</body>
+</html>

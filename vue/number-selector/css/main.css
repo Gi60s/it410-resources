@@ -1,0 +1,33 @@
+body {
+    padding: 15px;
+    font-family: Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 3px;
+}
+
+.number-selector {
+    display: flex;
+    width: 300px;
+}
+.number-selector > * {
+    border: 1px solid #888;
+    padding: 6px;
+}
+.number-selector > button {
+    width: 30px;
+    cursor: pointer;
+}
+.number-selector > div {
+    border-right: none;
+    border-left: none;
+    flex: 1;
+    width: auto;
+}
+
+.question {
+    margin: 15px 0;
+}
