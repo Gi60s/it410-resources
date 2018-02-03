@@ -8,19 +8,25 @@
 </head>
 <body>
     <div id="app">
-        <h1>Drop Down</h1>
+        <h1>Number Selector</h1>
 
         <div class="question">
+            <!-- add low property -->
+            <!-- add "value-change" event listener to update low -->
             <label>Low Value</label>
             <number-selector></number-selector>
         </div>
 
         <div class="question" :value="10">
+            <!-- add high property -->
+            <!-- add "value-change" event listener to update high -->
             <label>High Value</label>
             <number-selector></number-selector>
         </div>
 
         <div class="question">
+            <!-- add max, min, and value property -->
+            <!-- add "value-change" event listener to update value -->
             <label>Select a Number</label>
             <number-selector></number-selector>
         </div>

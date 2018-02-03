@@ -7,6 +7,8 @@
             value: 0
         },
         methods: {
+            // add methods: lowChanged, highChanged, valueChanged
+            // to update data when events fire
         }
     });
 })();
