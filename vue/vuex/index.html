@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Number Selector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Number Selector</h1>
+
+        <div class="question">
+            <!-- add unbound name property: "low" -->
+            <label>Low Value</label>
+            <number-selector></number-selector>
+        </div>
+
+        <div class="question" :value="10">
+            <!-- add unbound name property: "low" -->
+            <label>High Value</label>
+            <number-selector></number-selector>
+        </div>
+
+        <div class="question">
+            <!-- add bound max, min property -->
+            <!-- add unbound name property: "value" -->
+            <label>Select a Number</label>
+            <number-selector></number-selector>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="components/number-selector.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
