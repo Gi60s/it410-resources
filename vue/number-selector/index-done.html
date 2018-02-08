@@ -10,17 +10,17 @@
     <div id="app">
         <h1>Number Selector</h1>
 
-        <div class="question">
+        <div>
             <label>Low Value</label>
             <number-selector :value="low" v-on:value-change="lowChanged"></number-selector>
         </div>
 
-        <div class="question" :value="10">
+        <div>
             <label>High Value</label>
             <number-selector :value="high" v-on:value-change="highChanged"></number-selector>
         </div>
 
-        <div class="question">
+        <div>
             <label>Select a Number</label>
             <number-selector :value="value" :min="low" :max="high" v-on:value-change="valueChanged"></number-selector>
         </div>

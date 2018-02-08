@@ -28,6 +28,6 @@ label {
     width: auto;
 }
 
-.question {
+#app > div {
     margin: 15px 0;
 }
