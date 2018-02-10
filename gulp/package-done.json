@@ -2,7 +2,10 @@
   "name": "my-gulp-package",
   "version": "0.0.1",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "build": "gulp",
+    "dev": "gulp watch"
+  },
   "author": "",
   "private": true,
   "license": "ISC",
