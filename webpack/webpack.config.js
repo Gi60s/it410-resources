@@ -10,12 +10,13 @@ module.exports = {
         path: path.resolve(__dirname, 'dest')
     },
 
+    // the base directory for resolving entrypoints and loaders
     context: path.resolve(__dirname),
 
     resolve: {
-        extensions: ['.js', '.vue', '.json'],
+        extensions: ['.js', '.vue', '.json'],   // automatically resolve these extensions
         alias: {
-            'vue$': 'vue/dist/vue.esm.js',
+            'vue$': 'vue/dist/vue.esm.js',      // specify where to find vue
         }
     },
 
