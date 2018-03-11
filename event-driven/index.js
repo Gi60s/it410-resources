@@ -1,37 +1,47 @@
 'use strict';
-const fs = require('fs');
-const path = require('path');
-const readEmitter = require('./read-file');
-const writeEmitter = require('./write-file');
+const chalk = require('chalk');
+const RaceHorse = require('./race-horse');
 
-// write code to log all fs writes and reads
-readEmitter.on('success', function(event) {
-    console.log('read file', event);
-});
-writeEmitter.on('success', function(event) {
-    console.log('wrote file', event);
-});
+const horses = [
+    new RaceHorse('Secretariat'),
+    new RaceHorse('Seabiscuit'),
+    new RaceHorse('Man o\' war'),
+    new RaceHorse('Zenyatta'),
+    new RaceHorse('Ruffian')
+];
 
-// write code to cache read files
-const cache = {};
-readEmitter.on('success', function(event) {
-    console.log('added to cache: ' + event.filePath);
-    cache[event.filePath] = event.content;
-});
-function readFileCacheFirst(filePath, callback) {
-    filePath = path.resolve(process.cwd(), filePath);
-    if (cache[filePath]) {
-        console.log('from cached: ' + filePath);
-        callback(null, cache[filePath]);
-    } else {
-        fs.readFile(filePath, 'utf8', callback);
-    }
+lead(horses);
+progress(horses);
+winner(horses);
+
+
+
+function lead(horses) {
+    let lead;
+    horses.forEach(horse => {
+        horse.on('progress', (progress, time, delay) => {
+            if (!lead || (horse !== lead && progress > lead.progress)) {
+                lead = horse;
+                console.log(chalk.green(lead.name + ' takes the lead'));
+            }
+        });
+    })
 }
 
-fs.writeFile('./foo.txt', 'foo');
-fs.readFile('./foo.txt', 'utf8');
+function progress(horses) {
+    horses.forEach(horse => {
+        horse.on('progress', (progress, time, delay) => {
+            console.log(chalk.yellow(horse.name + ' at turn #' + progress));
+        });
+    })
+}
 
-setTimeout(function() {
-    readFileCacheFirst('./foo.txt', console.log);
-    readFileCacheFirst('./foo.txt', console.log);
-}, 1000);
+function winner(horses) {
+    let place = 1;;
+    horses.forEach(horse => {
+        horse.on('finish', time => {
+            console.log(chalk.blue(horse.name + ' placed #' + place));
+            place++;
+        });
+    })
+}
