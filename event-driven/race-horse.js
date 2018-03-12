@@ -11,7 +11,7 @@ class RaceHorse extends EventEmitter {
         this.progress = 0;
         
         const run = () => {
-            const delay = Math.round(Math.random() * 1000) + 100;
+            const delay = Math.round(Math.random() * 250) + 500;
             setTimeout(() => {
                 const time = Date.now() - start;
                 this.progress++;
