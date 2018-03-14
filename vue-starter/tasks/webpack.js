@@ -5,6 +5,8 @@ const webpack   = require('webpack');
 const appPath = config.build.main;
 
 exports.config = {
+
+    // if not production then we also want to load the dev tools onto the client
     entry: config.production
         ? { app: appPath }
         : { app: [ appPath, 'webpack/hot/dev-server', 'webpack-hot-middleware/client' ] },
@@ -16,6 +18,7 @@ exports.config = {
 
     context: config.build.dest,
 
+    // if not production then we also want source maps for easier front-end debugging
     devtool: config.production ? 'none' : 'eval-source-map',
 
     resolve: {
@@ -42,6 +45,7 @@ exports.config = {
         ]
     },
 
+    // if production then minimize JavaScript, otherwise enable hot module replacements
     plugins: config.production
         ? [
             new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),

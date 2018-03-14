@@ -50,6 +50,7 @@ function runBrowserSync() {
     });
 }
 
+// watch the server for file changes and auto restart
 function runServerSync() {
     return new Promise((resolve, reject) => {
         const args = config.development.serverArgs || [];
