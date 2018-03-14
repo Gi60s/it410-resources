@@ -37,7 +37,7 @@ function progress(horses) {
 }
 
 function winner(horses) {
-    let place = 1;;
+    let place = 1;
     horses.forEach(horse => {
         horse.on('finish', time => {
             console.log(chalk.blue(horse.name + ' placed #' + place));
