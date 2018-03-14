@@ -2,6 +2,19 @@
 const config        = require('../config');
 const express       = require('express');
 
+/**
+ * Questions:
+ * 
+ * 1. Do we want HTML5 or hash routing? 
+ * 
+ * 2. Should index.html redirect to /?
+ * 
+ * 3. How to get initial page load data? Three options:
+ *     - Server stores cookies and browser reads cookies
+ *     - Create a REST endpoint for initial load
+ *     - Generate a dynamic JavaScript file
+ */
+
 // create the express app
 const app = express();
 
