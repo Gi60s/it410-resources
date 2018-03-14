@@ -16,32 +16,14 @@
  **/
 'use strict';
 import App from '../components/App';
-import BYU from '../plugins/byu';
 import router from '../router/router'
 import store from '../store/index'
 import Vue from 'vue'
 
 import '../css/main.scss';
 
-Vue.config.ignoredElements = [
-    'byu-footer',
-    'byu-footer-column',
-    'byu-header',
-    'byu-menu',
-    'byu-search',
-    'byu-user-info'
-];
-
-Vue.use(BYU, {
-    search: {                   // remove search object to disable search
-        autoSearch: false,
-        autoSearchDelay: 300,
-        callback: function(value) {
-            console.log('Searched for ' + value)
-        },
-        value: ''
-    }
-});
+// an array of strings for all components that are not vue components
+Vue.config.ignoredElements = [];
 
 window.app = new Vue({
     el: '#app',
