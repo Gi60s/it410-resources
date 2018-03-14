@@ -30,19 +30,19 @@ const config = {
     development: {
         browserSync: true,                  // whether to use browserSync
         host: 'http://localhost',           // the hostname
-        port: 8460,                         // the port to run the development server on
+        port: 3000,                         // the port to run the development server on
         serverArgs: ['--inspect=9229'],     // arguments to pass to the server when started up - defaults to allow remote debugging on port 9229
         serverSync: true                    // whether to restart the server when code changes on it
     },
 
     // environment
-    production: (process.env.HANDEL_ENVIRONMENT_NAME || process.env.NODE_ENV) === 'production',     // whether the environment is production or not
+    production: process.env.NODE_ENV === 'production',     // whether the environment is production or not
 
     // server settings
     server: {
         directory: path.resolve(__dirname, 'server'),   // the directory that the server resides within
         main: path.resolve(__dirname, 'server/index'),  // the main JavaScript file for the server
-        port: 8461                                      // the port to run the server on
+        port: 3002                                      // the port to run the server on
     }
 
 };
