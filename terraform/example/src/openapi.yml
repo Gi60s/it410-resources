@@ -1,0 +1,17 @@
+openapi: '3.0.2'
+info:
+  title: Example API
+  version: 'v1'
+paths:
+  /hello:
+    get:
+      x-controller: greetings
+      x-operation: hello
+      summary: Greeting
+      responses:
+        200:
+          description: A greeting
+          content:
+            application/json:
+              schema:
+                type: string
