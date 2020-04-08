@@ -20,14 +20,11 @@
     const singlesCount = document.querySelector('#single-count');
     const doublesCount = document.querySelector('#double-count');
     const tripleCount = document.querySelector('#triple-count');
-    let singles = 0;
-    let doubles = 0;
-    let triples = 0;
 
     // convert clicks in the box to events
     const clickStream = Bacon.fromEventTarget(document.querySelector('#click-box'), "click");
 
-    // buffer events for 300 milliseconds
+    // buffer click events for 300 milliseconds
     const bufferedClickStream = clickStream.bufferWithTime(300);
 
     // map from the events that occurred to how many occurred
@@ -42,20 +39,26 @@
         document.querySelector('#click-count').innerHTML = value;
     });
 
-    singleClick.onValue(value => {
-        singles++;
-        singlesCount.innerHTML = singles;
-    });
+    singleClick
+        .map(() => 1)               // map each single click to the value 1
+        .scan(0, (a, b) => a + b)   // add up the value of each event (sum single click counts)
+        .onValue(value => {         // take value and show the count for this event stream
+            singlesCount.innerHTML = value;
+        });
 
-    doubleClick.onValue(value => {
-        doubles++;
-        doublesCount.innerHTML = doubles;
-    });
+    doubleClick
+        .map(() => 1)
+        .scan(0, (a, b) => a + b)
+        .onValue(value => {
+            doublesCount.innerHTML = value;
+        });
 
-    tripleClick.onValue(value => {
-        triples++;
-        tripleCount.innerHTML = triples;
-    });
+    tripleClick
+        .map(() => 1)
+        .scan(0, (a, b) => a + b)
+        .onValue(value => {
+            tripleCount.innerHTML = value;
+        });
 </script>
 
 </body>
