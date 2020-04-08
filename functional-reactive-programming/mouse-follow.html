@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Mouse Follow</title>
-    <script src="./bower_components/bacon/dist/Bacon.js"></script>
+    <script src="./node_modules/baconjs/dist/Bacon.js"></script>
 </head>
 <body>
 
@@ -16,11 +16,11 @@
 
 <script>
     const moveStream = Bacon.fromEventTarget(document.querySelector('#follow'), "mousemove");
+    const box = document.querySelector('#box');
 
     const delayedMoveStream = moveStream.delay(500);
 
     delayedMoveStream.onValue(event => {
-        const box = document.querySelector('#box');
         box.style.left = event.layerX + 'px';
         box.style.top = event.layerY + 'px';
     });

@@ -4,26 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Multi Click</title>
-    <script src="./bower_components/bacon/dist/Bacon.js"></script>
+    <script src="./node_modules/baconjs/dist/Bacon.js"></script>
 </head>
 <body>
 
-<div id='triple' style="border: 1px solid black; height: 200px; user-select: none;">
+<div id='click-box' style="border: 1px solid black; height: 200px; user-select: none;">
     <div>Triple Click in this Box</div>
-    <div>Click Count: <span id="click-count"></span></div>
+    <div>Last Click Count: <span id="click-count"></span></div>
+    <div>Single Click Count: <span id="single-count"></span></div>
+    <div>Double Click Count: <span id="double-count"></span></div>
+    <div>Triple Click Count: <span id="triple-count"></span></div>
 </div>
 
 <script>
-    const clickStream = Bacon.fromEventTarget(document.querySelector('#triple'), "click");
+    const singlesCount = document.querySelector('#single-count');
+    const doublesCount = document.querySelector('#double-count');
+    const tripleCount = document.querySelector('#triple-count');
+    let singles = 0;
+    let doubles = 0;
+    let triples = 0;
 
+    // convert clicks in the box to events
+    const clickStream = Bacon.fromEventTarget(document.querySelector('#click-box'), "click");
+
+    // buffer events for 300 milliseconds
     const bufferedClickStream = clickStream.bufferWithTime(300);
 
+    // map from the events that occurred to how many occurred
     const clickCount = bufferedClickStream.map(events => events.length);
+
+    // filter events based on how many happened
+    const singleClick = bufferedClickStream.filter(events => events.length === 1);
     const doubleClick = bufferedClickStream.filter(events => events.length === 2);
     const tripleClick = bufferedClickStream.filter(events => events.length === 3);
 
     clickCount.onValue(value => {
         document.querySelector('#click-count').innerHTML = value;
+    });
+
+    singleClick.onValue(value => {
+        singles++;
+        singlesCount.innerHTML = singles;
+    });
+
+    doubleClick.onValue(value => {
+        doubles++;
+        doublesCount.innerHTML = doubles;
+    });
+
+    tripleClick.onValue(value => {
+        triples++;
+        tripleCount.innerHTML = triples;
     });
 </script>
 
