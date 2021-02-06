@@ -44,8 +44,8 @@ The file `credit-card.js` has some functions started for you. For each of these 
 
 This function will take a credit card number as an input parameter and return an array of numbers.
 
-1. Write unit tests for this function in `test/index.test.js`
-2. Write the code for this function in `index.js`
+1. Write unit tests for this function in `test/credit-card.test.js`
+2. Write the code for this function in `credit-card.js`
 
 The input:
 
@@ -63,8 +63,8 @@ Calling `extractNumbers('5106 2348 1191 2226')` would result in an array with th
 
 This function will take an array of 16 numbers. Sum together every other number in the array, starting with the second number, and return the result.
 
-1. Write unit tests for this function in `test/index.test.js`
-2. Write the code for this function in `index.js`
+1. Write unit tests for this function in `test/credit-card.test.js`
+2. Write the code for this function in `credit-card.js`
 
 **Example**
 
