@@ -15,10 +15,10 @@ You are to create a simple credit card number validator with accompanying unit t
 
 **Calculation Example**
 
-Validate: `5105 2348 1191 2226`:
+Validate: `5106 2348 1191 2226`:
 
 ```
-Single digits:  1 5 3 8 1 1 2 6
+Single digits:  1 6 3 8 1 1 2 6
 Single summed:  28
 
 Double digits:  5 0 2 4 1 9 2 2
@@ -57,7 +57,7 @@ The output will be an array of the 16 numbers.
 
 **Example**
 
-Calling `extractNumbers('5105 2348 1191 2226')` would result in an array with these numbers: `[ 5, 1, 0, 5, 2, 3, 4, 8, 1, 1, 9, 1, 2, 2, 2, 6]`.
+Calling `extractNumbers('5106 2348 1191 2226')` would result in an array with these numbers: `[ 5, 1, 0, 6, 2, 3, 4, 8, 1, 1, 9, 1, 2, 2, 2, 6]`.
 
 ### processSingles
 
@@ -68,7 +68,7 @@ This function will take an array of 16 numbers. Sum together every other number 
 
 **Example**
 
-Calling `processSingles([ 5, 1, 0, 5, 2, 3, 4, 8, 1, 1, 9, 1, 2, 2, 2, 6])` would return `28`.
+Calling `processSingles([ 5, 1, 0, 6, 2, 3, 4, 8, 1, 1, 9, 1, 2, 2, 2, 6])` would return `28`.
 
 ### processDoubles
 
@@ -80,7 +80,7 @@ This function will take an array of 16 numbers, then:
 
 **Example**
 
-Calling `processDoubles([ 5, 1, 0, 5, 2, 3, 4, 8, 1, 1, 9, 1, 2, 2, 2, 6])` would return `32`.
+Calling `processDoubles([ 5, 1, 0, 6, 2, 3, 4, 8, 1, 1, 9, 1, 2, 2, 2, 6])` would return `32`.
 
 ### cardValidator
 
@@ -89,7 +89,7 @@ This function is already written for you. Don't worry about writing tests for it
 (In case you're wondering, I made these numbers up.)
 
 ```
-5105 2348 1191 2226
+5106 2348 1191 2226
 4816-2213-4854-2323
 5555-4444-3333-2424
 ```
