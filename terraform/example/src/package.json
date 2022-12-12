@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "aws-serverless-express": "^3.3.6",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "openapi-enforcer": "^1.8.2",
     "openapi-enforcer-middleware": "^1.2.2"
   }
