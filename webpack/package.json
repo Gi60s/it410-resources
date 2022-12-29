@@ -8,10 +8,10 @@
   "author": "James Speirs <james.speirs@gmail.com>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "css-loader": "^0.28.9",
+    "css-loader": "^6.7.3",
     "node-sass": "^4.7.2",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.20.1",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
     "webpack": "^3.10.0"
   },
   "dependencies": {
